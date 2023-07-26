@@ -21,6 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-mongoose.connect('mongodb://localhost:27017/items');
+mongoose.connect('mongodb+srv://angelali6462:ULpthEwc5aDA51Xy@assignment5.ycdcf52.mongodb.net/items');
 
 module.exports = app;
