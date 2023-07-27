@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import './App.css';
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
@@ -29,7 +31,7 @@ function App({dispatch, items, selectedItem}) {
 
     }
     callAPI()
-    },[callAPI])
+    },[])
 
   const handleSubmit = (event) => {
     event.preventDefault();
