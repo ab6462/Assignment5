@@ -29,7 +29,7 @@ function App({dispatch, items, selectedItem}) {
 
     }
     callAPI()
-    },[])
+    },[callAPI])
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -44,9 +44,6 @@ function App({dispatch, items, selectedItem}) {
         item
       });
     });
-
-
-
   }
 
   const handleClick = () => {
