@@ -14,21 +14,22 @@ function App({dispatch, items, selectedItem}) {
     setInputs(values => ({...values, [name]: value}));
   }
 
-  const callAPI = () => {
-      fetch("http://localhost:3001/users")
-          .then(res => res.text())
-          .then(res => {
-            const items = JSON.parse(res);
-            dispatch({
-              type: actions.SET_ITEMS,
-              items
-            });
-          });
-  }
 
   useEffect(() =>{
-    callAPI();
-    },[callAPI])
+    function callAPI() {
+      fetch("http://localhost:3001/users")
+      .then(res => res.text())
+      .then(res => {
+        const items = JSON.parse(res);
+        dispatch({
+          type: actions.SET_ITEMS,
+          items
+        });
+      });
+
+    }
+    callAPI()
+    },[])
 
   const handleSubmit = (event) => {
     event.preventDefault();
