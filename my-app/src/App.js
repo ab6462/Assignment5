@@ -28,7 +28,7 @@ function App({dispatch, items, selectedItem}) {
 
   useEffect(() =>{
     callAPI();
-    },[])
+    },[callAPI])
 
   const handleSubmit = (event) => {
     event.preventDefault();
